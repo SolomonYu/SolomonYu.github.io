@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Evaporating Water</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/shoppingstyle.css">
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<br>
+	<div class="mainWindow">
+		<a href="http://www.google.ca">ClickHere</a>
+		<img class="expandingImage" src="water.jpg" height="64" width="64">
+		<h1>Evaporating Water</h1><br>
+		<button onmouseover="expandImage('pubg')" onmouseout="shrinkImage('pubg')" onclick="buyItem('PUBG', 19.99)">PUBG<br>Cost: $19.99
+			<br>
+			<img id="pubg" class="hiddenImage" src="pubg.jpg">
+		</button>
+		<button onmouseover="expandImage('fortnite')" onmouseout="shrinkImage('fortnite')" onclick="buyItem('Fortnite', 0)">Fortnite<br>Cost: Free
+			<br>
+			<img id="fortnite" class="hiddenImage" src="fortnite.jpg">
+		</button>
+		<button onmouseover="expandImage('apex')" onmouseout="shrinkImage('apex')" onclick="buyItem('Apex Legends', 1)">Apex Legends <br>Cost: $1
+			<br>
+			<img id="apex" class="hiddenImage" src="apex.jpg">
+		</button>
+		<button onmouseover="expandImage('tetris99')" onmouseout="shrinkImage('tetris99')" onclick="buyItem('Tetris 99', 99)">Tetris 99 <br>Cost: $99 
+			<br>
+			<img id="tetris99" class="hiddenImage" src="tetris99.png">
+		</button>
+		<button onclick="removeItem()">Undo</button>
+		<br><br>
+		<div id="items">
+			Shopping Cart:<br>
+		</div>
+		<div>Total Cost: <span id="totalCost">0</span></div>
+	</div>
+
+	<div class="mainWindow">
+		<embed width="550" height="400" base="https://external.kongregate-games.com/gamez/0000/6057/live/" src="https://external.kongregate-games.com/gamez/0000/6057/live/embeddable_6057.swf" type="application/x-shockwave-flash"></embed>
+	</div>
+	
+
+
+</body>
+</html>

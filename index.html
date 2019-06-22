@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Solomon's Website</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	<script src="js/script.js"></script>
+	
+	<script type="text/javascript">
+		console.log("Hello World2");
+		var number = 0;
+
+		function myFunctionName(){
+			console.log("Function Called");
+			//for id
+			number++;
+			if (number % 2 === 1){
+				document.getElementById("idName").style.width = "25%";
+				document.getElementById("idName").innerHTML = "NEW TEXT1";
+				document.getElementById("idName").style.backgroundColor = "red";
+			}
+			else{
+				document.getElementById("idName").style.width = "50%";
+				document.getElementById("idName").innerHTML = "NEW TEXT2";
+				document.getElementById("idName").style.backgroundColor = "blue";
+			}
+			
+			//for class
+			var varName = document.getElementsByClassName("className"); 
+
+			varName[1].innerHTML = "New Class Text";
+		}
+
+	</script>	
+
+</head>
+<body>
+<h1><a href="./shoppinglist.html">Link to shopping site</a></h1>
+<h1>TITLE</h1>
+<button onclick="myFunctionName()" id="idName">Button Text</button>
+<div>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a nisl sit amet risus interdum rutrum. Praesent feugiat nisl ut est vulputate, ac cursus ante hendrerit. Etiam pulvinar lectus purus, quis rutrum ante congue quis. 
+	</p>
+	<br>
+	<div class="className">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a nisl sit amet risus interdum rutrum. Praesent feugiat nisl ut est vulputate, ac cursus ante hendrerit. Etiam pulvinar lectus purus, quis rutrum ante congue quis. 
+	</div>
+	<br>
+	<div id="idName">
+		Hello
+	</div>
+	<div class="className">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a nisl sit amet risus interdum rutrum. Praesent feugiat nisl ut est vulputate, ac cursus ante hendrerit. Etiam pulvinar lectus purus, quis rutrum ante congue quis. 
+	</div>
+</div>
+
+
+
+
+</body>
+</html>
