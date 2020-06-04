@@ -1,58 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Solomon's Website</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-	<script src="js/script.js"></script>
-	
-	<script type="text/javascript">
-		console.log("Hello World2");
-		var number = 0;
-
-		function myFunctionName(){
-			console.log("Function Called");
-			//for id
-			number++;
-			if (number % 2 === 1){
-				document.getElementById("idName").style.width = "25%";
-				document.getElementById("idName").innerHTML = "NEW TEXT1";
-				document.getElementById("idName").style.backgroundColor = "red";
-			}
-			else{
-				document.getElementById("idName").style.width = "50%";
-				document.getElementById("idName").innerHTML = "NEW TEXT2";
-				document.getElementById("idName").style.backgroundColor = "blue";
-			}
-			
-			//for class
-			var varName = document.getElementsByClassName("className"); 
-
-			varName[1].innerHTML = "New Class Text";
-		}
-
-	</script>	
+	<title>Solomon Yu</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="icon" href="favicon.ico">
 
 </head>
 <body>
-<h1><a href="./shoppinglist.html">Link to shopping site</a></h1>
-<h1>TITLE</h1>
-<button onclick="myFunctionName()" id="idName">Button Text</button>
-<div>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a nisl sit amet risus interdum rutrum. Praesent feugiat nisl ut est vulputate, ac cursus ante hendrerit. Etiam pulvinar lectus purus, quis rutrum ante congue quis. 
-	</p>
-	<br>
-	<div class="className">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a nisl sit amet risus interdum rutrum. Praesent feugiat nisl ut est vulputate, ac cursus ante hendrerit. Etiam pulvinar lectus purus, quis rutrum ante congue quis. 
+	<div id="navbar">
+		<ul>
+			<li id = "overview" onclick="showSection(this.id)" class="active">Overview</li>
+			<li id = "about" onclick="showSection(this.id)">About</li>
+			<li id = "teaching" onclick="showSection(this.id)">Teaching Material</li>
+			<li id = "projects" onclick="showSection(this.id)">Projects</li>
+			<li id = "experience" onclick="showSection(this.id)">Experience</li>
+			<li id = "contact" onclick="showSection(this.id)">Contact</li>
+		</ul>
 	</div>
-	<br>
-	<div id="idName">
-		Hello
+	<div id="overviewSection" class="section visible">
+		<img src="images/displaypic.jpg" width=282 height=249 id="displaypic">	
+		<h1>Solomon Yu</h1>
+		<p>
+			Hi there! I'm a Computer Science Student at Simon Fraser University with a passion for education and teaching.
+		</p>
 	</div>
-	<div class="className">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a nisl sit amet risus interdum rutrum. Praesent feugiat nisl ut est vulputate, ac cursus ante hendrerit. Etiam pulvinar lectus purus, quis rutrum ante congue quis. 
+	<div id="aboutSection"  class="section">
+		<h1>About</h1>
+		WIP
 	</div>
-</div>
+	<div id="teachingSection" class="section">
+		<h1>Teaching Material</h1>
+		<p>
+			Here are some of the projects I use for teaching.
+		</p>
+		<div id="html">
+			<h2>HTML/CSS/Javascript</h2>
+			<div>
+				<h3>Shopping Cart Project</h3>
+				<a href="teaching/shoppinglist/shoppinglist.html">Link</a>
+			</div>
+		</div>
+		<div id="python">
+			<h2>Python</h2>
+			WIP
+		</div>
+		<div id="unity">
+			<h2>Unity</h2>
+			WIP
+		</div>
+	</div>
+	<div id="projectsSection"   class="section">
+		<h1>Projects</h1>
+		WIP
+
+	</div>
+	<div id="experienceSection" class="section">
+		<h1>Experience</h1>
+		WIP
+	</div>
+	<div id="contactSection" class="section">
+		<h1>Contact Info</h1>
+		WIP
+		<div>
+			solomonyu1@gmail.com
+		</div>
+	</div>
 
 
 

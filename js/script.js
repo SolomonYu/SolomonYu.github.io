@@ -1,39 +1,14 @@
+sectionArray = ['overview', 'about', 'teaching', 'projects', 'experience', "contact"]
+activeSection = 'overview'
 
-let totalCost = 0;
-let costArray = [];
+console.log("script on.")
 
+function showSection(current){
+    console.log("switch to " + current)
+    document.getElementById(activeSection).classList.remove('active')
+    document.getElementById(activeSection+"Section").classList.remove('visible')
 
-
-function buyItem(item, cost){
-	var element = document.createElement('div');
-	element.innerHTML = item;
-	element.id = 'item';
-	document.getElementById('items').appendChild(element);
-	
-	console.log("Bought item: " + item + " at cost: $" + cost);
-	addCost(cost);
-}
-
-function removeItem(){
-	var items = document.getElementById('items');
-	items.removeChild(items.lastChild);
-	var lastCost = costArray.pop();
-	totalCost -= lastCost;
-	document.getElementById('totalCost').innerHTML = totalCost;
-}
-
-function addCost(cost){
-	totalCost += cost;
-	costArray.push(cost);
-	document.getElementById('totalCost').innerHTML = totalCost;
-}
-
-function expandImage(imageId){
-	console.log(imageId);
-	document.getElementById(imageId).className = "shownImage";
-}
-
-function shrinkImage(imageId){
-	console.log(imageId);
-	document.getElementById(imageId).className = "hiddenImage";
+    document.getElementById(current).classList.add('active')
+    document.getElementById(current+"Section").classList.add('visible')
+    activeSection = current
 }
