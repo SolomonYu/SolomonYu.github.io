@@ -19,13 +19,13 @@ function removeItem(){
 	items.removeChild(items.lastChild);
 	var lastCost = costArray.pop();
 	totalCost -= lastCost;
-	document.getElementById('totalCost').innerHTML = totalCost;
+	document.getElementById('totalCost').innerHTML = totalCost.toFixed(2);
 }
 
 function addCost(cost){
 	totalCost += cost;
 	costArray.push(cost);
-	document.getElementById('totalCost').innerHTML = totalCost;
+	document.getElementById('totalCost').innerHTML = totalCost.toFixed(2);
 }
 
 function expandImage(imageId){
