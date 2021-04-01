@@ -1,0 +1,4 @@
+- saving cookie count and saving upgrades
+-more expensive upgrades per buy
+- bulk upgrades
+ -cookies over time/per second

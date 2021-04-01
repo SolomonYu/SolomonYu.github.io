@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Solomon's Website | Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="game.js"></script>
+    <style>
+        body{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="api.html">Api</a></li>
+            <li><a href="table.html">Table</a></li>
+            <li id="active"><a href="cookieclicker.html">Game</a></li>
+        </ul>
+    </div>
+    
+    <img id="cookie" src="images/Cookie2.png" onclick="clickCookie()">
+
+    
+
+
+    <div id="cookieCount">
+        Cookies: <span id="count">0</span><br>
+        Cookies per Click: <span id="cookiesPerClick">1</span>
+    </div>
+
+
+    <hr>
+    <!-- Upgrades -->
+    <div id="upgrades">
+        
+        <h3>Upgrades</h3>
+        <hr>
+        <div><b>Clicker Upgrades</b></div>
+        Upgrade Click Cost:<span id="upgradeClickCost">10</span> Cookies <button class="upgradeButtons" onclick="upgradeClick()">Buy</button>
+    </div>
+
+    <button onclick="save()">Save</button>
+
+</body>
+</html>
