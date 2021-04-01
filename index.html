@@ -1,10 +1,14 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Solomon's Website</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
+	<title>Solomon Yu</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="icon" href="favicon.ico">
+
 </head>
 <body>
+<<<<<<< HEAD
     <div id="navbar">
         <!-- navbar lets you move between sub sites -->
         <ul>
@@ -28,8 +32,77 @@
     <br>
     <p>Hello this some random text</p>
     <button onclick="buttonClick()">Test!</button>
+=======
+	<div id="navbar">
+		<ul>
+			<li id = "overview" onclick="showSection(this.id)" class="active">Overview</li>
+			<li id = "about" onclick="showSection(this.id)">About</li>
+			<li id = "teaching" onclick="showSection(this.id)">Teaching Material</li>
+			<li id = "projects" onclick="showSection(this.id)">Projects</li>
+			<li id = "experience" onclick="showSection(this.id)">Experience</li>
+			<li id = "contact" onclick="showSection(this.id)">Contact</li>
+		</ul>
+	</div>
+	<div id="overviewSection" class="section visible">
+		<img src="images/displaypic.jpg" width=282 height=249 id="displaypic">	
+		<h1>Solomon Yu</h1>
+		<p>
+			Hi there! I'm a Computer Science Student at Simon Fraser University with a passion for education and teaching.
+		</p>
+	</div>
+	<div id="aboutSection"  class="section">
+		<h1>About</h1>
+		WIP
+	</div>
+	<div id="teachingSection" class="section">
+		<h1>Teaching Material</h1>
+		<p>
+			Here are some of the projects I use for teaching.
+		</p>
+		<div id="scratch">
+			<h2>Scratch</h2>
+			<div>
+				<h3><a href="teaching/scratch/pointgame.html">Point Collection Game</a></h3>
+				<p>An elementary level course on starting programming</p>
+			</div>
+		</div>
+		<div id="html">
+			<h2>HTML/CSS/Javascript</h2>
+			<div>
+				<h3><a href="teaching/shoppinglist/shoppinglist.html">Shopping Cart Project</a></h3>
+				<p>A beginner's guide. Students will create a basic website, and learn HTML/CSS/Javascript</p>
+				
+			</div>
+		</div>
+		<div id="python">
+			<h2>Python</h2>
+			WIP
+		</div>
+		<div id="unity">
+			<h2>Unity</h2>
+			WIP
+		</div>
+	</div>
+	<div id="projectsSection"   class="section">
+		<h1>Projects</h1>
+		WIP
 
-    
-    
+	</div>
+	<div id="experienceSection" class="section">
+		<h1>Experience</h1>
+		WIP
+	</div>
+	<div id="contactSection" class="section">
+		<h1>Contact Info</h1>
+		WIP
+		<div>
+			solomonyu1@gmail.com
+		</div>
+	</div>
+
+
+
+>>>>>>> parent of 402d5b9... initial commit
+
 </body>
 </html>
