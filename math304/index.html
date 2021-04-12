@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+
+    <div id="navbar">
+      <ul>
+        <li id = "overview" onclick="showSection(this.id)" class="active">Overview</li>
+        <li id = "research" onclick="showSection(this.id)">Research</li>
+        <li id = "examples" onclick="showSection(this.id)">Example Solves</li>
+        <li id = "credits" onclick="showSection(this.id)">Credits</li>
+      </ul>
+	  </div>
+
+    <div id="overviewSection" class="section visible">
+      <h1>Overview</h1>
+      <p>
+        Puzzle and Dragons is a mobile game played on a touch screen where the objective is to match 3 or more orbs by drawing a path on a 6 by 5 grid of orbs. The player holds down an orb, and is given a limited time to move the orb around the grid. Each time the orb is moved, the position of the orb being held and the position of the orb at the new position are swapped. The player’s turn ends once the time to hold the orb has run out, or if the player lets go of the orb. The player achieves a number of “combos” for each match of 3 or more connected orbs made.
+      </p>
+
+      <img class="board" src="board1.png">
+      <img class="board" src="board2.png">
+      <p>Above is an example of a path that results in two combos: heart and blue.</p>
+      <p>
+        For the sake of this project, we will be trying to maximize the number of 3-orb combos for any given board. 
+        More examples and solving strategies will be shown in the Examples tab.
+      </p> 
+      <p>We will be using the following site to simulate puzzle boards and show paths: <a href="https://candyninja001.github.io/Puzzled"/>https://candyninja001.github.io/Puzzled/</a></p>
+      <p>Here's an embedded version you can play with on this site.</p>
+      <iframe src="https://candyninja001.github.io/Puzzled/" title="PAD simulator" id="sim"></iframe>
+
+    </div>
+
+    <div id="researchSection" class="section">
+      <h1>Research</h1>
+      <!-- placeholder -->
+      See the following notebook for definitions, proofs and research on Puzzle and Dragons. 
+      <a href="https://www.notion.so/Solvability-Criteria-for-P-D-cc4ff85cb7804055a387ada2c2726d63">Notion Notebook</a>
+    </div>
+
+    <div id="examplesSection" class="section">
+      <h1>Example Solves</h1>
+      <h3>Example 1: Fully optimal boards</h3>
+      <p>
+        Let's take a look at some example boards, and solve them strategically.
+        For our first example, we will look at a board where all orbs with a specific color are divisible by 3. 
+      </p>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=LBBLGHGBHHLRHGGLHGLRHRBGBDBDDL">Board</a>
+      <p>
+        To solve this board, we will first match a horizontal row of three orbs in a corner. In this example, I match 3 blue orbs in the top left. Then I match the light in the top right, and match a row of green under the blue, and then create a row of hearts right under the light.
+      </p>
+      <p>
+        Now that the two rows on the top are solved, I begin to form columns starting from the right side. I start with a green column and move left, forming the dark and blue column. The remaining 3x3 square on the bottom left can be solved in either row form or column form by forming the row/column that is on the edge.  
+      </p>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=LBBLGHGBHHLRHGGLHGLRHRBGBDBDDL&replay=0.1.7.8.9.10.4.3.9.15.16.17.11.5.4.3.9.8.7.13.14.8.7.13.14.20.21.22.16.10.9.15.21.27.28.29.23.22.16.17.23.22.21.27.28.22.21.27.26.25.19.20.21.27.26.20.14.15.16.22.28.27.21.15.14.20.26.25.24.18.19.20.26.25.19.20.21.27.26">Solved Board.</a>
+
+      <h3>Example 2: Non optimal boards</h3>
+      <p>
+        In the case where a fully optimal 10 combo board can't be obtained, a path that provides the highest amount of combos is the "best". In the following board, the maximum possible combos is 8, since the are 6 orbs left over (2 hearts, 2 green, 1 light, 1 blue). 
+      </p>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=GLBRDLDDRGRBHGHHGLLGLLDBDHDHBL">Board</a>
+      <p>
+        In this solve, I start with the bottom two rows instead of the top two rows first, and then proceed to form columns from the right side.
+      </p>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=GLBRDLDDRGRBHGHHGLLGLLDBDHDHBL&replay=27.21.22.23.17.16.22.28.29.23.22.21.20.19.13.7.8.14.20.19.13.12.18.19.25.24.18.19.20.14.15.9.8.14.15.21.20.14.13.12.18.19.20.21.22.16.17.11.10.16.15.21.22.23.17.16.15.14.13.7.8.9.15.14.8.9.10.16.15.9.10.11.17.16.10.9.8.7.6.12.13.14.8.7.13.14.15.9.8.14.15.16.10.9.8.14.13.12.6.7.8.14.13.7.8.9.15.14">Solved Board.</a>
+
+      <p>More examples:</p>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=HBLLDGHBHLHBDLHDGRGBBLLBRRLDBL">Board</a>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=HBLLDGHBHLHBDLHDGRGBBLLBRRLDBL&replay=12.6.0.1.7.13.19.20.14.13.7.8.14.15.9.8.2.3.9.8.2.3.9.15.21.22.23.17.11.5.4.3.9.15.21.22.23.17.11.5.4.3.9.10.16.15.14.8.9.15.21.27.28.22.16.15.21.22.16.10.9.15.21.27.28.29.23.22.16.15.21.22.16.15.21.22.23.17.16.22.23.17.16.22.21.20.19.18.12.13.19.20.14.13.19.20.21.22.16.15.14.20.26.27.28.22.16.15.14.13.12.18.19.20.21&drops=1">Solved Board.</a>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=HLBRLLDGLLHRGLRDRDLRHLDHBDGBLH">Board</a>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=HLBRLLDGLLHRGLRDRDLRHLDHBDGBLH&replay=6.0.1.2.3.9.8.7.13.19.18.12.13.19.18.12.6.0.1.7.6.0.1.7.13.14.8.2.1.7.13.12.18.19.13.7.6.12.13.7.6.12.13.14.15.16.22.21.15.9.10.11.17.16.15.14.20.21.22.16.15.9.10.11.17.16.15.9.10.11.17.16.15.21.22.16.15.21.22.16.15.21.27.26.25.24.18.19.20.21.27.26.25.19.13.12.18.19.20.26.25.24.18.12.13.19.20.26.25.24.18.12.13.19.25.24.18.12.13.14.15.21.27.26.25.24.18.12.13.14.15.21.27.26.25.24.18.12.13.14.15.21.27.26.25.24.18.12.13.14.15.21.27.26.25.24.18.12.13.14.15.21.27.26.25.24.18.19.25.24.18.19.25.24&drops=1">Solved Board.</a>
+
+
+      <h3>Example 3: Bi-color boards</h3>
+      <p>Boards with fewer colors can be tricker, since if orb combos consisting of 3 orbs "touch" another combo, then the combos count as 1 combo instead of two.</p>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=DHRRDGHBRLRGRHBDLHDLGGRGDDHDHD&replay=21.15.16.22.28.27.21.20.26.25.24.18">This counts as 1 combo.</a>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=DHRRDGHBRLRGRHBDLHDLGGRGDDHDHD&replay=23.29.28.22.21.15.16.22.21.27.26.25.24.18">This counts as 2 combos.</a>
+      <p>Therefore, to get an optimal solve in a board with 2 colors, only rows of alternating combos can be made.</p>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=RRDRDRDDRDDDDRDDRDRRRRDRDRDDRR">Board</a>
+      <a href="https://candyninja001.github.io/Puzzled/?patt=RRDRDRDDRDDDDRDDRDRRRRDRDRDDRR&replay=28.22.23.29.28.27.26.25.24.18.19.25.24.18.12.13.14.20.19.13.14.15.9.10.16.15.14.8.2.3.9.10.11.5.4.10">Solved Board.</a>
+    </div>
+
+    <div id="creditsSection" class="section">
+      <h1>Credits</h1>
+      <p>Site by: Solomon Yu, Jane Li, Calum Duncan, William Ho</p>
+      <p>Created for: Math 304 Spring 2021 at SFU with Dr.Jamie Mulholland</p>
+      <p>GungHo Online Entertainment for creating the <a href="https://www.puzzleanddragons.us/">Puzzles and Dragons game.</a></p>
+      <p><a href="https://github.com/candyninja001/Puzzled">Hiatt Leveillee</a> and many others on github for PAD simulators.</p>
+    </div>
+
+  </body>
+</html>
